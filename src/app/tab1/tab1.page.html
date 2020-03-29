@@ -13,11 +13,14 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header> -->
-  <ion-item *ngFor="let contact of contacts">
-    <ion-label>
+  <ion-item *ngFor="let contact of contacts; index as i">
+    <ion-item>
       Name: {{contact.firstName}} {{contact.lastName}}
-    </ion-label>
-    
+    </ion-item>
+    <ion-item-options side="right">
+      <ion-button (click)="editContact(i)">Edit</ion-button>
+      <ion-button color="danger" (click)="deleteContact(i)">Delete</ion-button>
+    </ion-item-options>
   </ion-item>
   <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
