@@ -8,16 +8,27 @@ import { ModalController } from '@ionic/angular';
 })
 export class EditcontactPage implements OnInit {
 
-  fname: string;
-  lname: string;
+  firstName: string;
+  lastName: string;
   email: string;
 
   constructor(private modalController: ModalController) { }
 
   ngOnInit() {
+
+    let firstName = this.firstName;
+    let lastName = this.lastName;
+    let email = this.email;    
   }
 
-  dismiss(){
-    this.modalController.dismiss();
-  }
+  change() {
+
+    let edited = []
+    edited['firstName'] = this.firstName;
+    edited['lastName'] = this.lastName;
+    edited['email'] = this.email;
+    
+    this.modalController.dismiss(edited)
+  } 
+
 }

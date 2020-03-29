@@ -31,8 +31,6 @@ export class NewcontactPage implements OnInit {
     narr['firstName'] = this.fname;
     narr['lastName'] = this.lname;
     narr['email'] = this.email;
-   
-    // console.log(narr);
     this.modalController.dismiss(narr);
 
   }

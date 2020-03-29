@@ -1,9 +1,6 @@
 <ion-header>
   <ion-toolbar>
     <ion-title style="text-align: center;">editcontact</ion-title>
-    <ion-button (click)='dismiss()'>
-      <ion-icon slot="icon-only" name="close"></ion-icon>
-    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -11,5 +8,5 @@
   <ion-input [(ngModel)]="firstName" type="text" placeholder="firstName"></ion-input>
   <ion-input [(ngModel)]="lastName" type="text" placeholder="lastName"></ion-input>
   <ion-input [(ngModel)]="email" type="text" placeholder="email" ></ion-input>
-  <ion-button (click)='dismiss()'>Done</ion-button>
+  <ion-button (click)='change()'>Done</ion-button>
 </ion-content>
