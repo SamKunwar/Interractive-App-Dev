@@ -31,12 +31,12 @@ export class Tab1Page {
       // this.newcontact = retval.data;
       // console.log(this.newcontact);
       let nc = retval.data;
-      console.log()
-      if (nc == []){
-        console.log('empty');
+      
+      if ((nc['firstName'] == undefined) && (nc['lastName'] == undefined) && (nc['email'] == undefined)){
+        
       }
       else {
-        // this.contacts.push(nc);
+        this.contacts.push(nc);
       } 
       
     });
