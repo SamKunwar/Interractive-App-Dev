@@ -8,5 +8,8 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-input [(ngModel)]="firstName" type="text" placeholder="firstName"></ion-input>
+  <ion-input [(ngModel)]="lastName" type="text" placeholder="lastName"></ion-input>
+  <ion-input [(ngModel)]="email" type="text" placeholder="email" ></ion-input>
+  <ion-button (click)='dismiss()'>Done</ion-button>
 </ion-content>
