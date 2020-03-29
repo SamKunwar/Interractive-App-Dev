@@ -11,7 +11,8 @@ import { EditcontactPage} from '../editcontact/editcontact.page';
 })
 export class Tab1Page {
   
-  a = "demo";
+  add: string;
+  edit: string;
   contacts = [
     {firstName: 'Fran', lastName:'Jipani', email:'f.jipani@griffith.edu.au'},
     {firstName: 'Harry', lastName:'Potter', email:'H.potter@griffith.edu.au'},
@@ -21,9 +22,13 @@ export class Tab1Page {
 
   constructor(public modalController: ModalController) {}
   
+
   async addcontact() {
     const modal = await this.modalController.create({
-      component: NewcontactPage
+      component: NewcontactPage,
+      componentProps: {
+        'process': 'add'
+      }
     });
 
     modal.onDidDismiss().then((retval) => {
@@ -39,10 +44,34 @@ export class Tab1Page {
 
   };
 
-  async editContact(i) {
+  // async editContact(i) {
+  //   const modal = await this.modalController.create({
+  //     component: EditcontactPage,
+  //     componentProps: {
+  //       "firstName": this.contacts[i].firstName,
+  //       "lastName": this.contacts[i].lastName,
+  //       "email": this.contacts[i].email
+  //     }
+  //   });
+  //   modal.onDidDismiss().then((edited) => {
+  //     let nc = edited.data;
+  //     if ((nc['firstName'] == undefined) && (nc['lastName'] == undefined) && (nc['email'] == undefined)){
+      
+  //     }else {
+  //       this.contacts[i].firstName = nc['firstName'];
+  //       this.contacts[i].lastName = nc['lastName'];
+  //       this.contacts[i].email = nc['email'];
+  //     } 
+      
+  //   });
+  //   return await modal.present();
+  // };
+
+    async editContact(i) {
     const modal = await this.modalController.create({
-      component: EditcontactPage,
+      component: NewcontactPage,
       componentProps: {
+        "process" : "edit",
         "firstName": this.contacts[i].firstName,
         "lastName": this.contacts[i].lastName,
         "email": this.contacts[i].email

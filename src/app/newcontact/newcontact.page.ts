@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -9,30 +10,43 @@ import { ModalController } from '@ionic/angular';
 })
 export class NewcontactPage implements OnInit {
 
-  fname: string;
-  lname: string;
+  firstName: string;
+  lastName: string;
   email: string;
+  process: string
+  state: boolean
   narr = [];
  
   constructor(private modalController: ModalController) { }
 
   ngOnInit() {
-  }
-
-  close() {
-    this.modalController.dismiss();
+    if (this.process == "add"){
+      this.state = true;
+    }else{
+      this.state= false;
+    }
   }
 
   addcontact(firstName, lastName, email) {
-    this.fname = firstName;
-    this.lname = lastName;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.email = email; 
     let narr = []
-    narr['firstName'] = this.fname;
-    narr['lastName'] = this.lname;
+    narr['firstName'] = this.firstName;
+    narr['lastName'] = this.lastName;
     narr['email'] = this.email;
     this.modalController.dismiss(narr);
 
+  }
+
+  change() {
+
+    let edited = []
+    edited['firstName'] = this.firstName;
+    edited['lastName'] = this.lastName;
+    edited['email'] = this.email;
+    
+    this.modalController.dismiss(edited)
   }
 
 }
