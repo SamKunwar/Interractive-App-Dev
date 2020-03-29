@@ -19,6 +19,10 @@ export class NewcontactPage implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+    this.modalController.dismiss();
+  }
+
   addcontact(firstName, lastName, email) {
     this.fname = firstName;
     this.lname = lastName;

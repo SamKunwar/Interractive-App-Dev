@@ -31,7 +31,14 @@ export class Tab1Page {
       // this.newcontact = retval.data;
       // console.log(this.newcontact);
       let nc = retval.data;
-      this.contacts.push(nc);
+      console.log()
+      if (nc == []){
+        console.log('empty');
+      }
+      else {
+        // this.contacts.push(nc);
+      } 
+      
     });
     return await modal.present();
 
