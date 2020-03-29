@@ -18,6 +18,7 @@ export class Tab1Page {
     {firstName: 'Sam', lastName:'Willsion', email:'S.willsion@griffith.edu.au'}
   ];
 
+  i: any;
   
 
   constructor(public modalController: ModalController) {}
@@ -31,17 +32,25 @@ export class Tab1Page {
       // this.newcontact = retval.data;
       // console.log(this.newcontact);
       let nc = retval.data;
-      
       if ((nc['firstName'] == undefined) && (nc['lastName'] == undefined) && (nc['email'] == undefined)){
-        
-      }
-      else {
+      
+      }else {
         this.contacts.push(nc);
       } 
       
     });
     return await modal.present();
 
+  };
+
+  editContact(i) {
+    console.log(i);
+  };
+
+  deleteContact(i) {
+    if (confirm("Delete " + this.contacts[i].firstName + " " + this.contacts[i].lastName + " from contact list?")) {
+      this.contacts.splice(i, 1);
+    }
   };
 
 }
