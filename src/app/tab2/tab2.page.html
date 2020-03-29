@@ -1,0 +1,49 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Welcome
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Welcome</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <h2>Login</h2>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" Placeholder="Username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="Password" placeholder="Password"></ion-input>
+    </ion-item>
+  </ion-list> 
+  <app-explore-container name="Tab 2 page"></app-explore-container>
+</ion-content> -->
+
+<ion-card>
+  <ion-card-header [translucent]="true">
+    <ion-card-title>Welcome!</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content >
+    <h2>Login</h2>
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="username" type="text" Placeholder="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="password" type="Password" placeholder="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox></ion-checkbox>
+        <h5>Remain Logged In</h5>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="login(username)" color="success" size="large" expand="round">Login<ion-icon  name="enter-outline"></ion-icon></ion-button> 
+    <h5>{{loginCounter}} login attempts</h5>
+  </ion-card-content>
+</ion-card>

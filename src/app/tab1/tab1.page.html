@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button ion-only clear (click)="addcontact()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+    <ion-title style="text-align: center;">Contacts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <ion-item *ngFor="let contact of contacts">
+    <ion-label>
+      Name: {{contact.firstName}} {{contact.lastName}}
+    </ion-label>
+    
+  </ion-item>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>
