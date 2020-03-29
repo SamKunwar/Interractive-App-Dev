@@ -7,6 +7,7 @@ import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { NewcontactPage } from '../newcontact/newcontact.page';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { EditcontactPage } from '../editcontact/editcontact.page';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     RouterModule.forChild([{ path: '', component: Tab1Page }]),
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, NewcontactPage],
-  entryComponents: [NewcontactPage]
+  declarations: [Tab1Page, NewcontactPage, EditcontactPage],
+  entryComponents: [NewcontactPage,EditcontactPage]
 })
 export class Tab1PageModule {}

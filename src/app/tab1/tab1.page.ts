@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NewcontactPage } from '../newcontact/newcontact.page';
+import { EditcontactPage} from '../editcontact/editcontact.page';
 
 
 @Component({
@@ -10,15 +11,12 @@ import { NewcontactPage } from '../newcontact/newcontact.page';
 })
 export class Tab1Page {
   
-  // newcontact = [];
 
   contacts = [
     {firstName: 'Fran', lastName:'Jipani', email:'f.jipani@griffith.edu.au'},
     {firstName: 'Harry', lastName:'Potter', email:'H.potter@griffith.edu.au'},
     {firstName: 'Sam', lastName:'Willsion', email:'S.willsion@griffith.edu.au'}
   ];
-
-  i: any;
   
 
   constructor(public modalController: ModalController) {}
@@ -43,8 +41,22 @@ export class Tab1Page {
 
   };
 
-  editContact(i) {
-    console.log(i);
+  async editContact(i) {
+    const modal = await this.modalController.create({
+      component: EditcontactPage
+    });
+    // modal.onDidDismiss().then((retval) => {
+    //   // this.newcontact = retval.data;
+    //   // console.log(this.newcontact);
+    //   let nc = retval.data;
+    //   if ((nc['firstName'] == undefined) && (nc['lastName'] == undefined) && (nc['email'] == undefined)){
+      
+    //   }else {
+    //     this.contacts.push(nc);
+    //   } 
+      
+    // });
+    return await modal.present();
   };
 
   deleteContact(i) {

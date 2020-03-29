@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
   },
   {
-    path: 'tab1',
-    loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule)
-  },
-  {
     path: 'newcontact',
     loadChildren: () => import('./newcontact/newcontact.module').then( m => m.NewcontactPageModule)
   },

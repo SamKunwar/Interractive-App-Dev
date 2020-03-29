@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-editcontact',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditcontactPage implements OnInit {
 
-  constructor() { }
+  fname: string;
+  lname: string;
+  email: string;
+
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
   }
 
+  dismiss(){
+    this.modalController.dismiss();
+  }
 }
