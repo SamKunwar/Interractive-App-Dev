@@ -14,14 +14,27 @@
   </ion-header>
   <ion-list>
     <ion-label>Reminder Name:</ion-label>
-    <ion-input type="text" placeholder="name"></ion-input>
+    <ion-input [(ngModel)]="remName" type="text" placeholder="name"></ion-input>
     <ion-label>Choose a date:</ion-label>
-    <ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
-    <ion-item><ion-toggle color="primary"></ion-toggle> Show Notifications</ion-item>
+    <ion-datetime [(ngModel)]="remDate"  display-timezone="utc"></ion-datetime>
+    
   </ion-list>
-
-
   <ion-button color="secondary" (click)="store()">Done</ion-button>
+  <ion-item><ion-toggle [(ngModel)]="toggleBtn" color="primary" checked></ion-toggle> Show Notifications</ion-item>
+  <ion-list *ngIf="toggleBtn">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          {{notfName}}
+        </ion-col>
+        <ion-col>
+          <ion-datetime [(ngModel)]="notfDate"  display-timezone="utc"></ion-datetime> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+  </ion-list>
+ 
 
   <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
 </ion-content>
