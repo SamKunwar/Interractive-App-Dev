@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  remName: string;
+  remDate: Date;
+  toggleBtn: boolean;
+
+  constructor(private storage: Storage) {}
+
+  store() {
+    alert("pressed");
+  }
 
 }
