@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>chart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <canvas id="myChart" #healthGraph height=300></canvas>
+  <!-- <canvas id="myChart" width="200" height="200"></canvas> -->
+
+  <ion-input [(ngModel)]=newdata type="number" Placeholder="Enter data"></ion-input>
+  <ion-button (click)="pushToArray()">Add</ion-button>
+</ion-content>

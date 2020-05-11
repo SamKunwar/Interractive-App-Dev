@@ -17,7 +17,15 @@ const routes: Routes = [
   {
     path: 'editcontact',
     loadChildren: () => import('./editcontact/editcontact.module').then( m => m.EditcontactPageModule)
-  }
+  },
+  {
+    path: 'chart',
+    loadChildren: () => import('./chart/chart.module').then( m => m.ChartPageModule)
+  },
+  // {
+  //   path: 'maps',
+  //   loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+  // }
 ];
 @NgModule({
   imports: [
