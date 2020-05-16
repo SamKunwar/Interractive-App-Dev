@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-title></ion-title>
+</ion-header>
+
+<ion-content class="login">
+  <ion-grid fixed>
+    <h1 class="login__header">Login</h1><hr>
+    <ion-input class="login__inputField" [(ngModel)]='username' placeholder="Username" type="text"></ion-input><hr>
+    <ion-input class="login__inputField" [(ngModel)]='password' placeholder="Password" type="password"></ion-input><hr>
+    <ion-button class="login__button" expand="block" (click)="login()">Login</ion-button>
+  </ion-grid>
+</ion-content>

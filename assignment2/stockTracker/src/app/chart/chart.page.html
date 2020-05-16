@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon  class="back-button-icon" (click)="dismiss()" name="arrow-back" slot="start"></ion-icon>
+    <ion-title>Sales Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+    </ion-card-header>
+
+    <ion-card-content>
+      <canvas #barCanvas width="600" height="600"></canvas>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-radio-group>
+ 
+    <ion-item>
+      <ion-label>Line Chart</ion-label>
+      <ion-radio (click)="lineCharttype()" vlaue="1" slot="start"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Bar Chart</ion-label>
+      <ion-radio (click)="barCharttype()" vlaue="1" slot="start"></ion-radio>
+    </ion-item>
+    
+  </ion-radio-group>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-label>Items sold</ion-label>
+      <ion-input [(ngModel)]="sales_quantity" type="number" ></ion-input>
+      <ion-label>Sold date</ion-label>
+      <ion-datetime [(ngModel)]="sales_date" display-timezone="utc"></ion-datetime>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button (click)="addItem()">Add item to chart</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>

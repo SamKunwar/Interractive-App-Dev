@@ -1,0 +1,41 @@
+$color-white : #e6e2e2;
+$color-bluish-green : #13c1d8; 
+
+.login {
+    &__header {
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 5rem;
+        color: $color-bluish-green;
+    }
+
+    &__inputField {
+        
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 7px ;
+        padding-right: 10px ;
+        font-size: 0.9em ;
+        border: 1px solid 	$color-bluish-green ;
+        max-width: 80vw;
+        max-height: 10vh;
+        text-align: center;
+    }
+
+    &__button {
+        max-width: 80vw;
+        max-height: 6vh;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 7px;
+        background-color: $color-bluish-green;
+        --background: $color-bluish-white ;
+        font-family: PatuaOne-Regular;
+        font-size: 17px;
+        border: none;
+    }
+
+    &__link {
+        text-align: center;
+    }
+}

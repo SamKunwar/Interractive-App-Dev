@@ -1,0 +1,32 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content >
+  
+  <ion-fab horizontal="end" vertical="top" slot="fixed">
+
+    <ion-fab-button color="light">
+      <ion-icon name="caret-back"></ion-icon>
+    </ion-fab-button>
+
+    
+    <ion-fab-list side="bottom">
+      <ion-fab-button (click)="chart()" color="light">
+        <ion-icon name="stats-chart"></ion-icon>
+      </ion-fab-button>
+
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="logout()" color="light">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button (click)="goToHome()" color="light">
+        <ion-icon name="home"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab> 
+
+</ion-content>

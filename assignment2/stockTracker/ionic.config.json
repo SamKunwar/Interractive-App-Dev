@@ -1,0 +1,8 @@
+{
+  "name": "stockTracker",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

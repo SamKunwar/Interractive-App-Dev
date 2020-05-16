@@ -1,0 +1,27 @@
+<ion-header>  
+  <br>
+  <app-nav-menu></app-nav-menu>
+</ion-header>
+
+<br>
+
+<ion-content>
+  
+  <ion-card class="home__card" *ngFor="let item of items, index as i" (click)="showMenu(item)">
+  
+      <ion-img [src]="item.item_pic"></ion-img>
+      <ion-avatar class="home__profile-pic">
+        <ion-img [src]="image"></ion-img>
+      </ion-avatar>
+      <p class="home__profile-pic__item-name">{{item.item_name}}</p>
+    
+  </ion-card>
+
+  <ion-fab horizontal="start" vertical="bottom" slot="fixed">
+
+    <ion-fab-button color="light" (click)="addProd()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>
